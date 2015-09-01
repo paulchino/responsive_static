@@ -4,17 +4,38 @@ $orange: #ffa900;
 
 body {
 	background-color: black;
+	p {
+		color: white;
+		font-size: 12px;
+	}
+	h3 {
+		font-size: 20px;
+	}
+	h4 {
+		font-size: 15px;
+	}
+	h3, h4 {
+		color: $orange;
+	}
 }
 .container {
 	.row {
 		#header {
 			background-color: $dark_gray;
-			h4 {
-				float: right;
-				color: white;
-				font-weight: 400;
-				line-height: 67px;
-				margin: 0;
+			min-height: 100%;
+			display: flex;
+			align-items:center;
+			img {
+				max-width: 50%;
+			}
+			div {
+				margin-left: auto;
+				display: inline-block;
+				h5 {
+					color:white;
+					font-weight: 400;
+					margin: 0;
+				}
 			}
 		}
 		#main {
@@ -23,16 +44,17 @@ body {
 				max-width: 100%;
 				height: auto;
 				display: block;
-				margin-left: auto;
-				margin-right: auto; 
+				margin: 15px auto 0 auto;
 			}
 		}
 		#nav {
-			background-color: $nav_gray;
+			background: -webkit-linear-gradient(#4E4E4E, #434343,#4E4E4E); /* For Safari 5.1 to 6.0 */
+			background: -o-linear-gradient(#4E4E4E, #434343,#4E4E4E); /* For Opera 11.1 to 12.0 */
+			background: -moz-linear-gradient(#4E4E4E, #434343,#4E4E4E); /* For Firefox 3.6 to 15 */
+			background: linear-gradient(#4E4E4E, #434343,#4E4E4E); /* Standard syntax */
 			div {
 				display: inline-block;
 				height: 35px;
-/*				border-left: solid 1px black;*/
 				a {
 					color: white;
 					text-decoration: none;
@@ -49,74 +71,59 @@ body {
 				height: 60%; 
 				width: 1px;
 			}
-
-			div:first-child {
-				border-left: none;
+			@media screen and (max-width: 992px) {
+				div:nth-child(4):after {
+					content:none;
+				}
 			}
 		}
 
 		.sub_blocks {
-/*			border: solid 1px red;*/
 			height: 170px;
 			padding-top: 20px;
 			background-color: $dark_gray;
 			padding-left: 0;
 			padding-right: 0;
 			.sub_icon {
-/*				border: 1px solid blue;*/
 				width: 20%;
 				height: 100%;
 				display: inline-block;
 				vertical-align: top;
 				img {
 					margin-top: 30px;
+					max-width: 100%;
 				}
 			}
 			.sub_text {
-/*				border: solid 1px green;*/
 				height: 100px;
 				width: 75%;
 				display: inline-block;
 				h4 {
-					color: $orange;
 					font-weight: bold;
-				}
-				p {
-					color: white;
 				}
 			}
 		}
 		.buy_div {
-/*			height: 100px;*/
 			padding: 15px;
 			background-color: black;
 			.text {
 				display: inline-block;
 				width: 70%;
-				h3 {
-					color: $orange;
-				}
-				p {
-					color: white;
-				}
 			}
 			.buy_btn_div {
 				float: right;
-/*				border: solid 1px red;*/
 				margin-top: 30px;
 				button {
 					color: white;
 					background-color: $orange;
-					width: 100px;
+					max-width: 100px;
 					border-radius: 8px;
 					border: none;
 					padding: 6px;
-
 				}
 			}
 		}
 		.portfolio {
-/*			background-color: $dark_gray;*/
 			height: 40px;
 			.port_head {
 				h4 {
@@ -134,23 +141,14 @@ body {
 		}
 
 		.port_sub {
-/*			border: solid 1px red;*/
-			min-height: 310px;
-/*			background-color: $dark_gray;*/
+			min-height: 290px;
 			img {
 				display: block;
 				margin-left: auto;
 				margin-right: auto;
 				max-width: 100%;
 				height: auto;
-			}
-			.sub_text {
-				h4 {
-					color: $orange;
-				}
-				p {
-					color: white;
-				}
+				border: solid 3px gray;
 			}
 		}
 		.footer {
@@ -163,7 +161,6 @@ body {
 			}
 		}
 	}
-
 	.portfolio_row {
 		background-color: $dark_gray;
 	}
